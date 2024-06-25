@@ -14,7 +14,7 @@ const { createCsrfProtect, CsrfError } = require("@edge-csrf/node-http")
 // initalize csrf protection middleware
 const csrfProtect = createCsrfProtect({
 	cookie: {
-		secure: true,
+		secure: process.env.NODE_ENV === 'production',
 	},
 })
 
